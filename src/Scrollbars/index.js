@@ -513,10 +513,10 @@ export default class Scrollbars extends Component {
         const viewStyle = {
             ...viewStyleDefault,
             // Hide scrollbars by setting a negative margin
-            marginRight: scrollbarWidth ? -scrollbarWidth : DEFAULT_SCROLLBAR_WIDTH,
-            marginBottom: scrollbarWidth ? -scrollbarWidth : DEFAULT_SCROLLBAR_WIDTH,
+            marginRight: scrollbarWidth ? -scrollbarWidth : -DEFAULT_SCROLLBAR_WIDTH,
+            marginBottom: scrollbarWidth ? -scrollbarWidth : -DEFAULT_SCROLLBAR_WIDTH,
             paddingRight: scrollbarWidth ? 0 : DEFAULT_SCROLLBAR_WIDTH,
-            paddingLeft: scrollbarWidth ? 0 : DEFAULT_SCROLLBAR_WIDTH,
+            paddingBottom: scrollbarWidth ? 0 : DEFAULT_SCROLLBAR_WIDTH,
             ...(autoHeight && {
                 ...viewStyleAutoHeight,
                 // Add scrollbarWidth to autoHeight in order to compensate negative margins
@@ -544,7 +544,7 @@ export default class Scrollbars extends Component {
         const trackHorizontalStyle = {
             ...trackHorizontalStyleDefault,
             ...(autoHide && trackAutoHeightStyle),
-            ...((!scrollbarWidth || (universal && !didMountUniversal)) && {
+            ...((universal && !didMountUniversal) && {
                 display: 'none'
             })
         };
@@ -552,7 +552,7 @@ export default class Scrollbars extends Component {
         const trackVerticalStyle = {
             ...trackVerticalStyleDefault,
             ...(autoHide && trackAutoHeightStyle),
-            ...((!scrollbarWidth || (universal && !didMountUniversal)) && {
+            ...((universal && !didMountUniversal) && {
                 display: 'none'
             })
         };
