@@ -516,7 +516,7 @@ export default class Scrollbars extends Component {
             marginRight: scrollbarWidth ? -scrollbarWidth : DEFAULT_SCROLLBAR_WIDTH,
             marginBottom: scrollbarWidth ? -scrollbarWidth : DEFAULT_SCROLLBAR_WIDTH,
             paddingRight: scrollbarWidth ? 0 : DEFAULT_SCROLLBAR_WIDTH,
-            paddingLeft: scrollbarWidth ? 0 : DEFAULT_SCROLLBAR_WIDTH
+            paddingLeft: scrollbarWidth ? 0 : DEFAULT_SCROLLBAR_WIDTH,
             ...(autoHeight && {
                 ...viewStyleAutoHeight,
                 // Add scrollbarWidth to autoHeight in order to compensate negative margins
